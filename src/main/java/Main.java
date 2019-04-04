@@ -7,7 +7,9 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
     public static void main(String[] args) {
-        new Thread(new FilesWatcher()).start();
+        Thread t = new Thread(new FilesWatcher());
+        t.setDaemon(true);
+        t.start();
         Application.launch(args);
     }
 
