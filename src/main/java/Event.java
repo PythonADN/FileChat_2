@@ -11,7 +11,7 @@ import java.nio.file.Paths;
 import java.time.LocalDateTime;
 
 public class Event {
-    static String absolutePathOut; // =  "C:\\Users\\ADN\\IdeaProjects\\FileChat_2\\src\\main\\out_2";
+    static String absolutePathOut;
 
 
     public static void eventMonitoring(Stage primaryStage) {
@@ -25,7 +25,6 @@ public class Event {
 
                 // записываем в файл
                 String fileName = LocalDateTime.now().toString().replaceAll("[\\:,\\.]", "_");
-//                Path path = Paths.get("C:\\Users\\ADN\\IdeaProjects\\FileChat\\src\\main\\out_1\\"+fileName);
                 Path path = Paths.get(absolutePathOut+"\\"+fileName);
 
                 if (!Files.exists(path)) {

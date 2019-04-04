@@ -25,7 +25,6 @@ public class FilesWatcher implements Runnable {
 
     public static void Register() throws IOException, InterruptedException {
         WatchService watchService = FileSystems.getDefault().newWatchService();
-//        Path path = Paths.get("C:\\Users\\ADN\\IdeaProjects\\FileChat\\src\\main\\out_1");
         Path path = Paths.get(directoryPath);
         path.register(watchService, StandardWatchEventKinds.ENTRY_CREATE);
         for (; ; ) {
