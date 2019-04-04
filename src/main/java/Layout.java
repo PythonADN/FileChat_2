@@ -17,7 +17,8 @@ public class Layout {
     static TextArea textAreaOut;
     static TextArea textAreaIn;
     static Button button;
-
+    static Button buttonOut;
+    static Button buttonIn;
 
     public static void createLayout(Stage primaryStage) {
         textLeft = new Text("История сообщений" );
@@ -41,9 +42,12 @@ public class Layout {
 
         button = new Button("Отправить"); // кнопка отправки
 
+        buttonOut = new Button("Директория отправки файлов"); // путь Out
+        buttonIn = new Button("Директория приёма файлов"); // путь In
+
         VBox vBoxLeft = new VBox(10, textLeft, textAreaOut); // левый бокс
         VBox vBoxRight = new VBox(10, textRght, textAreaIn); // правый бокс
-        VBox vBoxRight2 = new VBox(10, button); // правый бокс 2
+        VBox vBoxRight2 = new VBox(10, button, buttonOut, buttonIn); // правый бокс 2
         vBoxRight2.setAlignment(Pos.TOP_RIGHT);
         VBox vBoxRightAll = new VBox(10, vBoxRight, vBoxRight2); // правый бокс общий
 
@@ -55,7 +59,7 @@ public class Layout {
         Scene scene = new Scene(root);
         primaryStage.setResizable(false); // запрет на изменение размера окна
         root.getChildren().addAll(hBox); // Добавление на сцену Контейнер с элементами
-        primaryStage.setTitle("Файловый чат 2");
+        primaryStage.setTitle("Файловый чат 1");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

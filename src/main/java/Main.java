@@ -14,6 +14,6 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         Layout.createLayout(primaryStage); // создание формы
-        Event.eventMonitoring(); // мониторинг событий
+        Event.eventMonitoring(primaryStage); // мониторинг событий
     }
 }
