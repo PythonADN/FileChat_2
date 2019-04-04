@@ -19,6 +19,7 @@ public class Layout {
     static Button button;
     static Button buttonOut;
     static Button buttonIn;
+    static String title;
 
     public static void createLayout(Stage primaryStage) {
         textLeft = new Text("История сообщений" );
@@ -59,7 +60,7 @@ public class Layout {
         Scene scene = new Scene(root);
         primaryStage.setResizable(false); // запрет на изменение размера окна
         root.getChildren().addAll(hBox); // Добавление на сцену Контейнер с элементами
-        primaryStage.setTitle("Файловый чат 1");
+        primaryStage.setTitle(title);
         primaryStage.setScene(scene);
         primaryStage.show();
     }

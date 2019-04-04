@@ -7,10 +7,11 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
     public static void main(String[] args) {
-        Thread t = new Thread(new FilesWatcher(args[1]));
+        Thread t = new Thread(new FilesWatcher(args[2]));
         t.setDaemon(true);
         t.start();
-        Event.absolutePathOut = args[0];
+        Layout.title = args[0];
+        Event.absolutePathOut = args[1];
         Application.launch(args);
     }
 
