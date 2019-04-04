@@ -11,7 +11,7 @@ import java.nio.file.Paths;
 import java.time.LocalDateTime;
 
 public class Event {
-    static String absolutePathOut = "C:\\Users\\ADN\\IdeaProjects\\FileChat_2\\src\\main\\out_2";
+    static String absolutePathOut; // =  "C:\\Users\\ADN\\IdeaProjects\\FileChat_2\\src\\main\\out_2";
 
 
     public static void eventMonitoring(Stage primaryStage) {

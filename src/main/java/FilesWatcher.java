@@ -6,6 +6,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class FilesWatcher implements Runnable {
+    private static String directoryPath;
+
+    public FilesWatcher(String directoryPath) {
+        FilesWatcher.directoryPath = directoryPath;
+    }
+
     @Override
     public void run() {
         try {
@@ -19,7 +25,8 @@ public class FilesWatcher implements Runnable {
 
     public static void Register() throws IOException, InterruptedException {
         WatchService watchService = FileSystems.getDefault().newWatchService();
-        Path path = Paths.get("C:\\Users\\ADN\\IdeaProjects\\FileChat\\src\\main\\out_1");
+//        Path path = Paths.get("C:\\Users\\ADN\\IdeaProjects\\FileChat\\src\\main\\out_1");
+        Path path = Paths.get(directoryPath);
         path.register(watchService, StandardWatchEventKinds.ENTRY_CREATE);
         for (; ; ) {
             WatchKey key = watchService.take();
